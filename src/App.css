@@ -1,0 +1,12 @@
+:root {
+  --primary: #c778dd !important;
+  --gray: #abb2bf;
+  --background: #282c33;
+}
+
+.App {
+  margin-top: 25px;
+  text-align: center;
+  background-color: #282c33;
+  /* height: 2400px; */
+}

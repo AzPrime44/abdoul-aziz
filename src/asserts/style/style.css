@@ -1,0 +1,47 @@
+.spantext {
+  font-family: 'Aklkatra', cursive;
+  color: white;
+  margin-right: 20px;
+}
+.text2 {
+  font-family: 'Fira Code Regular', monospace;
+  font-size: 12px;
+  color: var(--gray);
+  margin-left: 45px;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+.paper_about {
+  max-width: 80%;
+  align-self: center;
+  margin: 10%;
+}
+.paper_contact {
+  align-self: center;
+  width: calc(min(700px, 80%));
+  margin: 9%;
+  height: 70px;
+  flex: 1;
+  display: flex;
+}
+@media only screen and (max-width: 899px) {
+  .paper_contact {
+    min-width: 97%;
+    /* margin-left: 6%; */
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 20%;
+    margin-bottom: 50%;
+  }
+  .paper_about {
+    max-width: 95%;
+    align-self: center;
+    margin: 1%;
+  }
+}

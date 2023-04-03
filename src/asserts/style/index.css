@@ -1,0 +1,90 @@
+.monContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  display: flex;
+  flex: 1;
+}
+.center {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.contenu {
+  /* background-color: blue; */
+  flex: 7;
+}
+.ul {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.monBtn {
+  font-weight: 400;
+  color: var(--gray);
+  background-color: transparent;
+  border: 0;
+  margin-right: 40px;
+  cursor: pointer;
+}
+.monBtn:focus {
+  outline: none;
+}
+
+.active {
+  color: white !important;
+
+  /* font-family: ; */
+}
+.media_link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+  .maNav {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* align-self: flex-end; */
+    /* padding: 0.5rem; */
+    background-color: var(--background) !important;
+  }
+  .logo {
+    padding-left: 30px;
+  }
+  .navmui {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .menu {
+    display: none;
+  }
+  .navmui {
+    display: block;
+  }
+  .center {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+}
+
+.menuIcon:focus {
+  outline: none;
+}
