@@ -20,23 +20,59 @@ const items = ['home', 'works', 'about-me', 'contacts'];
 
 function DrawerAppBar(props) {
   const {window} = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setOpen((prevState) => !prevState);
+  };
+
+  const [touchStart, setTouchStart] = React.useState(null);
+  const [touchEnd, setTouchEnd] = React.useState(null);
+  const appRef = React.useRef(null);
+  // the required distance between touchStart and touchEnd to be detected as a swipe
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+  const handleClick = (event) => {
+    if (appRef.current && !appRef.current.contains(event.target)) {
+      setOpen(!open);
+    }
+  };
+  React.useEffect(() => {
+    document.addEventListener('click', handleClick);
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, [open]);
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    // const distance = touchStart - touchEnd;
+    // const isRightSwipe = distance < -10;
+    if (touchStart - touchEnd < -10) {
+      setOpen(!open);
+    }
+    // add your conditional logic here
   };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{textAlign: 'center', right: 0}}>
       <Typography variant="h6" sx={{my: 2}}>
-        <FaRegWindowClose style={{color: 'white'}} />
+        <FaRegWindowClose style={{color: 'white', cursor: 'pointer'}} />
       </Typography>
       <Divider />
       <List>
         {items.map((item, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton
-              onClick={() => props.setSelected(index)}
+              onClick={() => {
+                props.setSelected(index);
+                setOpen(true);
+                // handleDrawerToggle();
+              }}
               sx={{textAlign: 'center'}}
             >
               <div
@@ -56,7 +92,13 @@ function DrawerAppBar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{display: 'flex'}}>
+    <Box
+      sx={{display: 'flex'}}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+      ref={appRef}
+    >
       <CssBaseline />
       <AppBar component="nav" sx={{backgroundColor: '#282c33'}}>
         <Toolbar>
@@ -82,7 +124,7 @@ function DrawerAppBar(props) {
           container={container}
           variant="persistent"
           anchor="right"
-          open={mobileOpen}
+          open={open}
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.

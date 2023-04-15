@@ -63,6 +63,8 @@
     /* align-self: flex-end; */
     /* padding: 0.5rem; */
     background-color: var(--background) !important;
+    border-bottom: 2px solid #25292f !important;
+    box-shadow: #25292f 0px 4px 10px 0px;
   }
   .logo {
     padding-left: 30px;
