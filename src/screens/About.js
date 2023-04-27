@@ -40,17 +40,15 @@ export default function ({setSelected}) {
             <a
               style={{color: '#C778DD'}}
               href="https://esp.sn"
+              target="_blank"
               className="mr-1 text-decoration-none"
             >
               l'ESP
             </a>
-            . J'ai une grande passion pour la conception et le design, et j'aime
-            créer des solutions innovantes et élégantes pour répondre aux
-            besoins des utilisateurs. J'ai une solide expérience en
-            programmation, ce qui me permet de transformer des idées en
-            applications fonctionnelles et efficaces. Je suis constamment à la
-            recherche de nouvelles technologies et de nouveaux défis pour
-            améliorer mes compétences .N'hésitez pas à me
+            . J'ai eu a realisé plusieur projets scolaires et personnelles au
+            cours de ma formation .Je suis constamment à la recherche de
+            nouvelles technologies et de nouveaux défis pour améliorer mes
+            compétences .N'hésitez pas à me
             <button
               className="monBtn ml-2"
               onClick={() => setSelected(3)}

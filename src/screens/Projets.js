@@ -34,11 +34,42 @@ export default function Projets() {
           title="Exchange"
           techno={['React native,', '  Python']}
           key={2}
-          description="met l'accent sur les centres d'intérêt des utilisateurs. Avec Exchange, les utilisateurs peuvent échanger des connaissances, des expériences et des opinions sur des sujets qui les passionnent.
-          "
+          description={
+            <span>
+              met l'accent sur les centres d'intérêt des utilisateurs. Avec
+              Exchange, les utilisateurs peuvent échanger des connaissances, des
+              expériences et des opinions sur des sujets qui les passionnent.
+              <br />
+              <span style={{color: 'gray'}}>The Ripo is private !</span>
+            </span>
+          }
           taille={400}
         />
-        <MaCard title="Simulator" techno={['Java']} />
+        <MaCard
+          repo="https://github.com/AzPrime44/simulation"
+          taille={300}
+          title="Simulator"
+          techno={['Java , ', 'Python']}
+          description="Application qui simule une transmission par fibre optique , admet une interface graphique user-friendly facile a utilisé ,grace au drap-and-drop on arrive a stimuler une transmission reseau et effectuer de nombreuses calcules"
+        />
+        <MaCard
+          taille={400}
+          title="Ecole Doctorale"
+          techno={['Java EE , ', 'Spring boot']}
+          description="Plateforme qui automatise la préinscription et l'inscription des doctorants de l'école doctorale de Mathématiques et d'informatiques."
+        />
+        <MaCard
+          taille={400}
+          title="Plaformate de Datavisualisation"
+          techno={['LeaftleJS , ', 'Canvas , ', 'PHP ', 'Réseau']}
+          description="Mise en place de la plateforme de datavisualisation en temps réel du premier hydrophone realise au sénégale"
+        />
+        <MaCard
+          taille={400}
+          title="Crack-the-code"
+          techno={['Java ']}
+          description="Mise en oeuvre d'un crackeur de mots de passe qui permet l'utilisation de la methode brute force ou la methode dictionnaire. projet conçu à des fins pedagogiques "
+        />
       </div>
     </div>
   );

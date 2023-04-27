@@ -3,7 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import az from '../asserts/image/myEmoji.png';
 import NavMui from '../component/NavMui';
 export default function Nav({selected, setSelected}) {
-  const items = ['home', 'works', 'about-me', 'contacts'];
+  const items = ['Home', 'Projets', 'About-me', 'Contacts'];
   React.useEffect(() => {}, [selected]);
   return (
     <div>

@@ -36,11 +36,12 @@ export default function Home({setSelected}) {
       <div className="header">
         <div className="h_left_left">
           <span className="text1">
-            I am Abdoul,a web designer and front-end developer
+            Je suis Abdoul Aziz ,Eléve inegieur en informatique
           </span>
           <div className="text2">
-            Un designer frontend créatif et passionné qui crée des expériences
-            utilisateur exceptionnelle
+            je suis ravi de pouvoir partager avec vous mes projets, mes
+            compétences et mes réalisations tout au long de mon parcours
+            académique.
           </div>
           <button
             type="button"
@@ -120,6 +121,7 @@ export default function Home({setSelected}) {
             title="Kaddu"
             techno={['React']}
             setSelected={setSelected}
+            taille={400}
             redirect={true}
             description="Appli qui permet de communiquer, par commande vocale..."
           />
@@ -137,6 +139,7 @@ export default function Home({setSelected}) {
             setSelected={setSelected}
             redirect={true}
             taille={200}
+            description="Application qui simule une transmission par fibre optique..."
           />
         </div>
       </section>

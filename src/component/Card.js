@@ -89,16 +89,16 @@ export default function MaCard({
           </span>
         )}
         {repo && (
-          <Typography gutterBottom variant="h8" component="div" sx={semi_style}>
-            <span>
-              check the repo on
-              <a href={repo}>
-                <IconButton aria-label="fingerprint" color="secondary">
-                  <FaGithub />
-                </IconButton>
-              </a>
-            </span>
-          </Typography>
+          // <Typography gutterBottom variant="h8" component="div" sx={semi_style}>
+          <span style={text}>
+            check the repo on
+            <a href={repo} target="_blank">
+              <IconButton aria-label="fingerprint" color="secondary">
+                <FaGithub />
+              </IconButton>
+            </a>
+          </span>
+          // </Typography>
         )}
       </CardContent>
     </Card>

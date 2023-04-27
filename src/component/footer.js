@@ -20,10 +20,13 @@ export default function Footer() {
         >
           <span className="media_text">Media</span>
           <div className="media_link">
-            <a href="https://github.com/AzPrime44">
+            <a href="https://github.com/AzPrime44" target="_blank">
               <FaGithub style={{color: '#afb5bc'}} title="Check my Github" />
             </a>
-            <a href="https://www.linkedin.com/in/abdoul-aziz-ebe/">
+            <a
+              href="https://www.linkedin.com/in/abdoul-aziz-ebe/"
+              target="_blank"
+            >
               <FaLinkedinIn
                 style={{color: '#afb5bc'}}
                 title="Check my LinkedIn"

@@ -16,7 +16,7 @@ import {FaRegWindowClose} from 'react-icons/fa';
 import Avatar from '@mui/material/Avatar';
 import az from '../asserts/image/myEmoji.png';
 const drawerWidth = 240;
-const items = ['home', 'works', 'about-me', 'contacts'];
+const items = ['Home', 'Projets', 'About-me', 'Contacts'];
 
 function DrawerAppBar(props) {
   const {window} = props;
@@ -39,7 +39,7 @@ function DrawerAppBar(props) {
   const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
   const handleClick = (event) => {
     if (appRef.current && !appRef.current.contains(event.target)) {
-      setOpen(!open);
+      setOpen(false);
     }
   };
   React.useEffect(() => {
@@ -52,7 +52,7 @@ function DrawerAppBar(props) {
     if (!touchStart || !touchEnd) return;
     // const distance = touchStart - touchEnd;
     // const isRightSwipe = distance < -10;
-    if (touchStart - touchEnd < -10) {
+    if (touchStart - touchEnd < -40) {
       setOpen(!open);
     }
     // add your conditional logic here
